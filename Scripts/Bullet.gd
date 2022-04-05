@@ -3,7 +3,7 @@ extends Area2D
 
 enum DIRECTION { UP, DOWN, LEFT, RIGHT} 
 var direction = DIRECTION.UP
-export var speed = 250
+export var speed = 500
 
 func _ready():
 	pass # Replace with function body.
@@ -35,7 +35,7 @@ func _process(delta):
 	elif direction == DIRECTION.RIGHT:
 		position.x +=speed*delta
 		
-	if position.x < 8 or position.x >180 or position.y<12 or position.y >180:
+	if position.x < 8 or position.x >(380*2) or position.y<12 or position.y >380*2:
 		print("removing bullet")
 		queue_free()
 		

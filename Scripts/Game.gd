@@ -8,10 +8,10 @@ var rng = RandomNumberGenerator.new()
 
 
 var enemyPos= {
-	DIRECTION.UP : Vector2(93,180),
-	DIRECTION.DOWN : Vector2(93,25),
-	DIRECTION.LEFT : Vector2(169,97),
-	DIRECTION.RIGHT : Vector2(21,97),
+	DIRECTION.UP : Vector2(373,745),
+	DIRECTION.DOWN : Vector2(373,10),
+	DIRECTION.LEFT : Vector2(750,382),
+	DIRECTION.RIGHT : Vector2(10,382),
 }
 
 func _ready():
@@ -38,6 +38,7 @@ func _input(event):
 func add_enemy(dir):
 	print("add enemy ", dir)
 	var instance = enemyClass.instance()
+	instance.scale = Vector2(1.5,1.5)
 	instance.position = enemyPos[dir]
 	instance.direction = dir
 	self.add_child(instance)

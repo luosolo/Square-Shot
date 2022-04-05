@@ -3,7 +3,7 @@ extends Area2D
 
 enum DIRECTION { UP, DOWN, LEFT, RIGHT} 
 var direction = DIRECTION.UP
-export var speed = 100
+export var speed = 300
 
 func _process(delta):
 	if direction == DIRECTION.UP:
