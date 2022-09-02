@@ -44,6 +44,7 @@ stream = ExtResource( 6 )
 autoplay = true
 
 [node name="GAME_UI" parent="." instance=ExtResource( 8 )]
+visible = false
 z_index = 3
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

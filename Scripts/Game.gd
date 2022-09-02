@@ -27,7 +27,7 @@ func _ready():
 	game_ui.addInstance(gameInstanceObject)
 	game_ui.connect("new_game", self, "_on_new_game")
 	gameInstanceObject.reset()
-	game_ui.game_over()
+	game_ui.game_over(-1)
 	game_over()
 	
 func _on_new_game():
@@ -64,13 +64,12 @@ func add_enemy(dir):
 	instance.position = enemyPos[dir]
 	instance.direction = dir
 	instance.speed = gameInstanceObject.speed
-	instance.connect("ennemy_destroyed", self, "_on_ennemy_destroyed")
-	
+	instance.connect("ennemy_destroyed", self, "_on_ennemy_destroyed")	
 	self.add_child(instance)
 	
 func _on_ennemy_destroyed () :
 	if (gameInstanceObject.enemy_shot()):
-		timer.wait_time -= 0.1
+		timer.wait_time =max(0.3, timer.wait_time - 0.1)
 	game_ui.refreshInfo()
 	
 func _on_player_killed () :
@@ -82,7 +81,7 @@ func _on_player_killed () :
 func game_over():
 	inGame = false	
 	player.game_over = true
-	game_ui.game_over()
+	game_ui.game_over(gameInstanceObject.points)
 		
 
 func _on_Timer_timeout():
