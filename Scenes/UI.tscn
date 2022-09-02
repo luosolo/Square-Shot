@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/FFFFORWA.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/UI.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 19
+outline_size = 1
+outline_color = Color( 0.776471, 0.478431, 0.478431, 1 )
+font_data = ExtResource( 1 )
+
+[node name="GAME_UI" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="LIFE" type="Label" parent="."]
+margin_left = 635.0
+margin_top = 55.0
+margin_right = 759.0
+margin_bottom = 82.0
+custom_fonts/font = SubResource( 1 )
+text = "LIFE: 3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="POINT" type="Label" parent="."]
+margin_left = 35.0
+margin_top = 55.0
+margin_right = 138.0
+margin_bottom = 82.0
+rect_pivot_offset = Vector2( 175, 192 )
+custom_fonts/font = SubResource( 1 )
+text = "POINT: 0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option" type="Node2D" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="Option"]
+margin_left = 166.0
+margin_top = 219.0
+margin_right = 581.0
+margin_bottom = 513.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NEW GAME" type="Label" parent="Option"]
+margin_left = 257.0
+margin_top = 299.0
+margin_right = 390.0
+margin_bottom = 326.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.941176, 0.27451, 0.27451, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "NEW GAME"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QUIT" type="Label" parent="Option"]
+margin_left = 257.0
+margin_top = 395.0
+margin_right = 390.0
+margin_bottom = 422.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 1 )
+text = "QUIT"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

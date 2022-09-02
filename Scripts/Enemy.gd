@@ -5,6 +5,8 @@ enum DIRECTION { UP, DOWN, LEFT, RIGHT}
 var direction = DIRECTION.UP
 export var speed = 300
 
+signal ennemy_destroyed
+
 func _process(delta):
 	if direction == DIRECTION.UP:
 		position.y -=speed*delta
@@ -23,4 +25,5 @@ func destroy_complete():
 func _on_Enemy_area_entered(area):
 	if area.get_collision_layer() ==2:
 		area.shoted()
+		emit_signal("ennemy_destroyed")			
 		queue_free()
